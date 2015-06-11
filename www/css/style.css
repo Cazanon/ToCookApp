@@ -1,0 +1,13 @@
+.recipePicture{
+    width: 50%;
+    height: auto;
+}
+
+.recipeIngredients{
+    width: 50%;
+    height: auto;
+}
+
+.blue{
+    background-color: darkturquoise;
+}
