@@ -53,7 +53,7 @@ angular.module('controllers', ['services'])
 
 .controller('RecipeCtrl', function($scope, $stateParams, Recipe) {
     $scope.recipe = Recipe.get({recipeId: $stateParams.recipeId});
-});
+})
 
 
 
@@ -70,3 +70,29 @@ angular.module('controllers', ['services'])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });*/
+
+
+.controller('PlaylistsCtrl', function($scope) {
+	$scope.steps = [];
+	for (var i=0; i<5; i++) {
+		$scope.steps[i] = {
+			name: i,
+			items: []
+		};
+	    for (var j=0; j<3; j++) {
+	      $scope.steps[i].items.push(i + '-' + j);
+	    }
+	}
+	
+	$scope.toggleGroup = function(step) {
+	    if ($scope.isGroupShown(step)) {
+	    	$scope.shownGroup = null;
+	    } else {
+	    	$scope.shownGroup = step;
+	    }
+	};
+	
+	$scope.isGroupShown = function(step) {
+		return $scope.shownGroup === step;
+	};
+});
