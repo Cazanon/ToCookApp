@@ -21,45 +21,44 @@ angular.module('starter', ['ionic', 'controllers'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
 
-  .state('app', {
+  $stateProvider.state('app', {
     url: "/app",
     abstract: true,
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
- 
-    .state('app.recipes', {
-      url: "/recipes",
-      views: {
-          'menuContent': {
-              templateUrl: "templates/recipes.html",
-              controller: 'RecipesCtrl'
-          }
-      }
-    })
 
-     .state('app.recipes.category', {
-      url: "/recipes/category/:category",
-      views: {
-          'menuContent': {
-              templateUrl: "templates/recipes.html",
-              controller: 'RecipesCategoryCtrl'
-          }
+  .state('app.recipes', {
+    url: "/recipes",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/recipes.html",
+        controller: 'RecipesCtrl'
       }
-    })
-  
-	.state('app.recipe', {
-		url: "/recipes/:recipeId",
-		views: {
-			'menuContent': {
-			  templateUrl: "templates/recipe.html",
-			  controller: 'RecipeCtrl'
-		  }
-		}
-	});
-  
+    }
+  })
+
+  .state('app.category', {
+    url: "/category/:category",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/recipes.html",
+        controller: 'RecipesCategoryCtrl'
+      }
+    }
+  })
+
+  .state('app.recipes.detail', {
+    url: "/:recipeId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/recipe.html",
+        controller: 'RecipeCtrl'
+      }
+    }
+  });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/recipes');
 });

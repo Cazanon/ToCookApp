@@ -2,14 +2,14 @@
 angular.module('controllers', ['services'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-  
+
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  
+
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -43,25 +43,21 @@ angular.module('controllers', ['services'])
 })
 
 .controller('RecipesCtrl', function($scope, Recipe) {
-    $scope.recipes = Recipe.query();
+  $scope.recipes = Recipe.query();
 })
 
 .controller('RecipeCtrl', function($scope, $stateParams, Recipe) {
-    $scope.recipe = Recipe.get({recipeId: $stateParams.recipeId});
+  $scope.recipe = Recipe.get({
+    recipeId: $stateParams.recipeId
+  });
 })
 
 
-.controller('RecipesCategoryCtrl', function($scope, $stateParams, Recipe) {
-    $scope.recipes =  Recipe.get({category: $stateParams.category});
+.controller('RecipesCategoryCtrl', function($scope, $stateParams, RecipesCategory) {
+  $scope.recipes = RecipesCategory.query({
+    category: $stateParams.category
+  });
 })
-
-/*
-.controller('RecipesCategoryCtrl', function($scope, $stateParams, Recipe) {
-	Recipe.get({category: $stateParams.category}).$promise.then(function(response){$scope.recipes = response.data;});
-})*/
-
-
-
 
 /*
 el servicio de ionic
@@ -86,26 +82,26 @@ y dentro de la función  $scope.recipes = response.data;*/
 
 
 .controller('PlaylistsCtrl', function($scope) {
-	$scope.steps = [];
-	for (var i=0; i<5; i++) {
-		$scope.steps[i] = {
-			name: i,
-			items: []
-		};
-	    for (var j=0; j<3; j++) {
-	      $scope.steps[i].items.push(i + '-' + j);
-	    }
-	}
-	
-	$scope.toggleGroup = function(step) {
-	    if ($scope.isGroupShown(step)) {
-	    	$scope.shownGroup = null;
-	    } else {
-	    	$scope.shownGroup = step;
-	    }
-	};
-	
-	$scope.isGroupShown = function(step) {
-		return $scope.shownGroup === step;
-	};
+  $scope.steps = [];
+  for (var i = 0; i < 5; i++) {
+    $scope.steps[i] = {
+      name: i,
+      items: []
+    };
+    for (var j = 0; j < 3; j++) {
+      $scope.steps[i].items.push(i + '-' + j);
+    }
+  }
+
+  $scope.toggleGroup = function(step) {
+    if ($scope.isGroupShown(step)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = step;
+    }
+  };
+
+  $scope.isGroupShown = function(step) {
+    return $scope.shownGroup === step;
+  };
 });
