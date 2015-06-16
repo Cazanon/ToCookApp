@@ -46,15 +46,28 @@ angular.module('controllers', ['services'])
     $scope.recipes = Recipe.query();
 })
 
-.controller('RecipesCategoryCtrl', function($scope, $stateParams, Recipe) {
-    $scope.recipes =  Recipe.get({category: $stateParams.category});
-})
-
-
 .controller('RecipeCtrl', function($scope, $stateParams, Recipe) {
     $scope.recipe = Recipe.get({recipeId: $stateParams.recipeId});
 })
 
+
+.controller('RecipesCategoryCtrl', function($scope, $stateParams, Recipe) {
+    $scope.recipes =  Recipe.get({category: $stateParams.category});
+})
+
+/*
+.controller('RecipesCategoryCtrl', function($scope, $stateParams, Recipe) {
+	Recipe.get({category: $stateParams.category}).$promise.then(function(response){$scope.recipes = response.data;});
+})*/
+
+
+
+
+/*
+el servicio de ionic
+Recipe.get({category: $stateParams.category});
+}).then(function(response) {});
+y dentro de la función  $scope.recipes = response.data;*/
 
 
 /*.controller('PlaylistsCtrl', function($scope) {
