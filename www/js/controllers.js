@@ -46,8 +46,8 @@ angular.module('controllers', ['services'])
     $scope.recipes = Recipe.query();
 })
 
-.controller('RecipesCategoryCtrl', function($scope, Recipe) {
-    $scope.recipes =  Recipe.get({categoryId: $stateParams.categoryId});
+.controller('RecipesCategoryCtrl', function($scope, $stateParams, Recipe) {
+    $scope.recipes =  Recipe.get({category: $stateParams.category});
 })
 
 

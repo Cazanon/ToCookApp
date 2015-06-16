@@ -39,9 +39,9 @@ angular.module('starter', ['ionic', 'controllers'])
           }
       }
     })
-	
-     .state('app.recipes.category', {
-      url: "/recipes/category/:categoryId",
+
+     .state('app.recipes', {
+      url: "/recipes/:category",
       views: {
           'menuContent': {
               templateUrl: "templates/recipes.html",
