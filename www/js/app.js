@@ -40,8 +40,8 @@ angular.module('starter', ['ionic', 'controllers'])
       }
     })
 
-     .state('app.recipes', {
-      url: "/recipes/:category",
+     .state('app.recipes.category', {
+      url: "/recipes/category/:category",
       views: {
           'menuContent': {
               templateUrl: "templates/recipes.html",
