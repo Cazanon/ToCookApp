@@ -24,7 +24,7 @@
 	        	<ion-item menu-close href="#/app/recipes">
 	          		Recetas
 	        	</ion-item>
-		        <ion-item ng-repeat="category in categories" menu-close href="#/app/category/{{category.name}}">
+		        <ion-item ng-repeat="category in categories track by category.id" menu-close href="#/app/category/{{category.name}}">
 		        	{{category.name}}
 		        </ion-item>	           
    			</ion-list>

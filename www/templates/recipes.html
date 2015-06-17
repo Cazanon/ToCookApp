@@ -1,7 +1,7 @@
 <ion-view view-title="ToCook">
     <ion-content overflow-scroll="true"> <!--class="has-header"> -->
         <ion-list class="list list-inset">
-             <div class="card" ng-repeat="recipe in recipes">
+             <div class="card" ng-repeat="recipe in recipes track by recipe.id">
                 <div class="item item-avatar bar bar-calm">
                     <img class="full-image" ng-src="{{recipe.icon}}"> 
                     <h1 class="title">{{recipe.name}}</h1>

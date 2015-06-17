@@ -6,7 +6,7 @@
            		<h3 class="title">Ingredientes</h3>
            	</div>
            	<ion-list class="list list-inset">        
-            	<div class="item" ng-repeat="ingredient in recipe.ingredients">            		
+            	<div class="item" ng-repeat="ingredient in recipe.ingredients track by ingredient.ingredient">            		
                 	{{ingredient.ingredient}}
                    	{{ingredient.quantity}}
                    	{{ingredient.units}}.
@@ -18,7 +18,7 @@
            		<h3 class="title">Pasos</h3>
            	</div>
     		<ion-list ng-controller="PlaylistsCtrl">
-    			<div ng-repeat="step in recipe.steps">
+    			<div ng-repeat="step in recipe.steps track by step.number">
 	      			<ion-item class="item-stable" ng-click="toggleGroup(step)" ng-class="{active: isGroupShown(step)}">
 	          			<i class="icon" ng-class="isGroupShown(step) ? 'ion-minus' : 'ion-plus'"></i>
 	        			&nbsp;
