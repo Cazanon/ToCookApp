@@ -14,4 +14,9 @@ angular.module('services', ['ngResource'])
 			}
 		}
 	);
+})
+
+.factory('Category', function ($resource) {
+    return $resource('https://tocook-nodeserver.herokuapp.com/recipes/categories');
 });
+

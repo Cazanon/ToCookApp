@@ -1,7 +1,7 @@
 //angular.module('starter.controllers', [])
 angular.module('controllers', ['services'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, Category) {
 	//With the new view caching in Ionic, Controllers are only called
 	//when they are recreated or on app start, instead of every page change.
 	//To listen for when this page is active (for example, to refresh data),
@@ -37,6 +37,8 @@ angular.module('controllers', ['services'])
 			$scope.closeLogin();
 		}, 1000);
 	};
+	
+	$scope.categories = Category.query();
 })
 
 .controller('RecipesCtrl', function($scope, Recipe) {

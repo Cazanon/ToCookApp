@@ -24,15 +24,9 @@
 	        	<ion-item menu-close href="#/app/recipes">
 	          		Recetas
 	        	</ion-item>
-	        	<ion-item menu-close href="#/app/category/Arroces">
-	          		Arroz
-	        	</ion-item>   
-	        	<ion-item menu-close href="#/app/category/Pastas">
-	          		Pasta
-	        	</ion-item>   
-	        	<ion-item menu-close href="#/app/category/Carnes">
-	          		Carne
-	        	</ion-item>   
+		        <ion-item ng-repeat="category in categories" menu-close href="#/app/category/{{category.name}}">
+		        	{{category.name}}
+		        </ion-item>	           
    			</ion-list>
     	</ion-content>
 	</ion-side-menu>     
