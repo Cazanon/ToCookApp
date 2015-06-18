@@ -17,7 +17,7 @@
     		<div class="item item-divider bar bar-calm">
            		<h3 class="title">Pasos</h3>
            	</div>
-    		<ion-list ng-controller="PlaylistsCtrl">
+    		<ion-list ng-controller="ListCtrl">
     			<div ng-repeat="step in recipe.steps track by step.number">
 	      			<ion-item class="item-stable" ng-click="toggleGroup(step)" ng-class="{active: isGroupShown(step)}">
 	          			<i class="icon" ng-class="isGroupShown(step) ? 'ion-minus' : 'ion-plus'"></i>
