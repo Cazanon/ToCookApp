@@ -66,6 +66,16 @@ angular.module('starter',['ionic', 'controllers'])
 				controller: 'RecipeCtrl'
 			}
 		}
+	})
+	
+	.state('app.favourite', {
+		url: "/favourite/:favList",
+		views: {
+			'menuContent': {
+				templateUrl: "templates/recipes.html",
+				controller: 'RecipesFavouriteCtrl'
+			}
+		}
 	});
   
 	// if none of the above states are matched, use this as the fallback

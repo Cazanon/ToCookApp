@@ -1,7 +1,7 @@
 //angular.module('starter.controllers', [])
 angular.module('controllers', ['services'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, Category) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, Category, Favourite) {
 	//With the new view caching in Ionic, Controllers are only called
 	//when they are recreated or on app start, instead of every page change.
 	//To listen for when this page is active (for example, to refresh data),
@@ -39,6 +39,7 @@ angular.module('controllers', ['services'])
 	};
 	
 	$scope.categories = Category.query();
+	$scope.favourites = Favourite.query();
 })
 
 .controller('RecipesCtrl', function($scope, Recipe) {
@@ -52,6 +53,12 @@ angular.module('controllers', ['services'])
 .controller('RecipesCategoryCtrl', function($scope, $stateParams, RecipesCategory) {
 	$scope.recipes = RecipesCategory.query({
 		category: $stateParams.category
+	});
+})
+
+.controller('RecipesFavouriteCtrl', function($scope, $stateParams, RecipesFavourite) {
+	$scope.recipes = RecipesFavourite.query({
+		favList: $stateParams.favList
 	});
 })
 

@@ -19,5 +19,20 @@ angular.module('services', ['ngResource'])
 
 .factory('Category', function ($resource) {
     return $resource('https://tocook-nodeserver.herokuapp.com/recipes/categories');
-});
+})
 
+.factory('RecipesFavourite', function($resource) {	
+	return $resource('https://tocook-nodeserver.herokuapp.com/recipes/favourite/:favList', {
+		category: '@favourite'
+		},{
+			'query': {
+				method: 'GET',
+				isArray: true
+			}
+		}
+	);
+})
+
+.factory('Favourite', function ($resource) {
+    return $resource('https://tocook-nodeserver.herokuapp.com/recipes/favourites');
+});

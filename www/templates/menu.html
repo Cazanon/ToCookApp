@@ -24,9 +24,18 @@
 	        	<ion-item menu-close href="#/app/recipes">
 	          		Recetas
 	        	</ion-item>
+	        	<ion-item>
+	          		<h2>Categoria</h2>
+	        	</ion-item>
 		        <ion-item ng-repeat="category in categories track by category.id" menu-close href="#/app/category/{{category.name}}">
 		        	{{category.name}}
-		        </ion-item>	           
+		        </ion-item>		        
+	        	<ion-item>
+	          		<h2>Favoritos</h2>
+	        	</ion-item>	     
+		        <ion-item ng-repeat="favourite in favourites track by favourite.id" menu-close href="#/app/favourite/{{favourite.name}}">
+		        	{{favourite.name}}
+		        </ion-item>		       
    			</ion-list>
     	</ion-content>
 	</ion-side-menu>     
