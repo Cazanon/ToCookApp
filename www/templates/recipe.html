@@ -1,7 +1,7 @@
-<ion-view view-title={{recipe.name}}{{recipe.category}}>
+<ion-view view-title={{recipe.name}}>
     <ion-content>
-    	<div class="item item-body">
-        	<img class="full-image" ng-src="{{recipe.image}}">   
+    	<div class="item-body">
+        	<img class="full-image" ng-src="http://192.168.1.238:5000/images/recipe/{{recipe.image}}">   
             <div class="item item-divider bar bar-calm">
            		<h3 class="title">Ingredientes</h3>
            	</div>
@@ -20,9 +20,10 @@
     		<ion-list ng-controller="ListCtrl">
     			<div ng-repeat="step in recipe.steps track by step.number">
 	      			<ion-item class="item-stable" ng-click="toggleGroup(step)" ng-class="{active: isGroupShown(step)}">
+	          			{{step.number}}
 	          			<i class="icon" ng-class="isGroupShown(step) ? 'ion-minus' : 'ion-plus'"></i>
 	        			&nbsp;
-	        			{{step.number}}{{step.sumary}}
+	        			{{step.sumary}}
 	      			</ion-item>
 	      			<div class="item" class="item-accordion" ng-show="isGroupShown(step)">
 	        			<p>{{step.description}}</p>

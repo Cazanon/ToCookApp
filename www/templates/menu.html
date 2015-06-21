@@ -1,10 +1,10 @@
 <ion-side-menus enable-menu-with-back-views="false">
 	<ion-side-menu-content>
-		<ion-nav-bar  class="bar bar-header mainColor" >
+		<ion-nav-bar  class="bar bar-header mainBarColor" >
       		<ion-nav-back-button>
 	      	</ion-nav-back-button>
 	      	<ion-nav-buttons side="left">
-	        	<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+	        	<button class="button button-icon ion-navicon" menu-toggle="left">
 	        	</button>
 	      	</ion-nav-buttons>
     	</ion-nav-bar>
@@ -13,7 +13,7 @@
   	</ion-side-menu-content>
 
 	<ion-side-menu side="left">
-    	<ion-header-bar class="bar-stable">
+    	<ion-header-bar class="subMainBarColor">
       		<h1 class="title">ToCook</h1>
     	</ion-header-bar>
     	<ion-content>
@@ -21,20 +21,29 @@
 		        <!--<ion-item menu-close ng-click="login()">
 		          Login
 		        </ion-item>-->
-	        	<ion-item menu-close href="#/app/recipes">
-	          		Recetas
+	        	<ion-item menu-close href="#/app/recipes" class="item item-avatar">
+	        		<img ng-src="http://192.168.1.238:5000/images/icon/receta.png">
+					<div class="textAvatar">
+	          			Recetas
+	          		</div>
 	        	</ion-item>
-	        	<ion-item>
-	          		<h2>Categoria</h2>
+	        	<ion-item  class="item item-divider itemDividerColor">
+	          		Categorias
 	        	</ion-item>
-		        <ion-item ng-repeat="category in categories track by category.id" menu-close href="#/app/category/{{category.name}}">
-		        	{{category.name}}
+		        <ion-item ng-repeat="category in categories | orderBy: 'name'" menu-close href="#/app/category/{{category.name}}" class="item item-avatar">
+		        	<img ng-src="http://192.168.1.238:5000/images/icon/{{category.icon}}">
+					<div class="textAvatar">
+						{{category.name}}
+					</div>
 		        </ion-item>		        
-	        	<ion-item>
-	          		<h2>Favoritos</h2>
+	        	<ion-item  class="item item-divider itemDividerColor">
+	          		Favoritos
 	        	</ion-item>	     
-		        <ion-item ng-repeat="favourite in favourites track by favourite.id" menu-close href="#/app/favourite/{{favourite.name}}">
-		        	{{favourite.name}}
+		        <ion-item ng-repeat="favourite in favourites | orderBy: 'name'" menu-close href="#/app/favourite/{{favourite.name}}" class="item item-avatar">
+		        	<img ng-src="http://192.168.1.238:5000/images/icon/favorito.png">
+					<div class="textAvatar">
+		        		{{favourite.name}}
+		        	</div>
 		        </ion-item>		       
    			</ion-list>
     	</ion-content>

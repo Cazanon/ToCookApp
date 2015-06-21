@@ -1,7 +1,25 @@
-.mainColor{
+.mainBackground{
 	background-color: #24c0c2;
+}
+
+.mainBarColor{
+	background-color: #F7A900;
 	color: white;
 }
+
+.subMainBarColor{
+	background-color: #F7BA00;
+	color: white;
+}
+
+.itemDividerColor{
+	background-color: #FAEC84;
+}
+
+.textAvatar{
+	padding-top: 6%;
+}
+
 
 .recipePicture{
     width: 50%;
@@ -17,18 +35,3 @@
     background-color: darkturquoise;
 }
 
-.list .item.item-accordion {
-  line-height: 38px;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: 0.09s all linear;
-}
-
-.list .item.item-accordion.ng-hide {
-  line-height: 0px;
-}
-
-.list .item.item-accordion.ng-hide-add,
-.list .item.item-accordion.ng-hide-remove {
-  display: block !important;
-}

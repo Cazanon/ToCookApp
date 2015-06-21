@@ -1,9 +1,6 @@
 
-// Modificar listado de recetas
 // Boton de listado y cuadricula
 // Add mongoDB
-// Rendimiento
-// Imagenes desde el servidor
 // CSS
 // Lista Favoritos
  
