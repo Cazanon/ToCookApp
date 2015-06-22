@@ -1,5 +1,3 @@
-
-// Boton de listado y cuadricula
 // Add mongoDB
 // CSS
 // Lista Favoritos

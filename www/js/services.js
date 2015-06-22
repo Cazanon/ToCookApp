@@ -1,5 +1,6 @@
 //var server = "http://192.168.1.238:5000";
 var server = "https://tocook-nodeserver.herokuapp.com";
+//var server = "http://10.55.158.193:5000";
 angular.module('services', ['ngResource'])
 
 .service('Recipe', function ($http) {

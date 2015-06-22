@@ -5,6 +5,7 @@ angular.module('controllers', ['services'])
 	$scope.favourites = Favourite.query();
 	//$scope.server = "http://192.168.1.238:5000";
 	$scope.server = "https://tocook-nodeserver.herokuapp.com";
+	//$scope.server = "http://10.55.158.193:5000";
 })
 
 .controller('RecipesCtrl', function($scope, Recipe) {
