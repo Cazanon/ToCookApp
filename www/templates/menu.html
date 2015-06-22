@@ -22,7 +22,7 @@
 		          Login
 		        </ion-item>-->
 	        	<ion-item menu-close href="#/app/recipes" class="item item-avatar">
-	        		<img ng-src="http://192.168.1.238:5000/images/icon/receta.png">
+	        		<img ng-src="{{server}}/images/icon/receta.png">
 					<div class="textAvatar">
 	          			Recetas
 	          		</div>
@@ -31,7 +31,7 @@
 	          		Categorias
 	        	</ion-item>
 		        <ion-item ng-repeat="category in categories | orderBy: 'name'" menu-close href="#/app/category/{{category.name}}" class="item item-avatar">
-		        	<img ng-src="http://192.168.1.238:5000/images/icon/{{category.icon}}">
+		        	<img ng-src="{{server}}/images/icon/{{category.icon}}">
 					<div class="textAvatar">
 						{{category.name}}
 					</div>
@@ -40,7 +40,7 @@
 	          		Favoritos
 	        	</ion-item>	     
 		        <ion-item ng-repeat="favourite in favourites | orderBy: 'name'" menu-close href="#/app/favourite/{{favourite.name}}" class="item item-avatar">
-		        	<img ng-src="http://192.168.1.238:5000/images/icon/favorito.png">
+		        	<img ng-src="{{server}}/images/icon/favorito.png">
 					<div class="textAvatar">
 		        		{{favourite.name}}
 		        	</div>

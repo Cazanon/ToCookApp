@@ -3,13 +3,13 @@
         <ion-list>
         	<ion-item class="card" ng-repeat="recipe in recipes | orderBy: 'name'">        		
             	<div class="item item-avatar">
-		        	<img ng-src="http://192.168.1.238:5000/images/icon/{{recipe.icon}}">
+		        	<img ng-src="{{server}}/images/icon/{{recipe.icon}}">
 					<h2>{{recipe.name}}</h2>
 					<p>{{recipe.subname}}</p>
 		        </div>	     
 		        <a class="item item-body" href="#/app/{{recipe.id}}">  		        
 		        	<div class="item item-image">         
-	               		<img class="full-image" ng-src="http://192.168.1.238:5000/images/recipe/{{recipe.image}}">
+	               		<img class="full-image" ng-src="{{server}}/images/recipe/{{recipe.image}}">
 	               	</div>
                 </a>
         	</ion-item>

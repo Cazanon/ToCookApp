@@ -3,6 +3,8 @@ angular.module('controllers', ['services'])
 .controller('AppCtrl', function($scope, Category, Favourite) {
 	$scope.categories = Category.query();
 	$scope.favourites = Favourite.query();
+	//$scope.server = "http://192.168.1.238:5000";
+	$scope.server = "https://tocook-nodeserver.herokuapp.com";
 })
 
 .controller('RecipesCtrl', function($scope, Recipe) {
